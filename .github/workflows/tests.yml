@@ -1,0 +1,22 @@
+name: UI TESTS
+on:
+  push:
+    branches: [github-actions]
+  workflow_dispatch:
+
+jobs:
+  test_actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: run tests
+        run: pytest
