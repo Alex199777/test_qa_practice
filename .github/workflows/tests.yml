@@ -1,4 +1,4 @@
-name: UI TESTS
+name: UI and API TESTS
 on:
   push:
     branches: [github-actions]
