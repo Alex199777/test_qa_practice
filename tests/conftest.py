@@ -17,3 +17,8 @@ def driver():
     # yield browser
     # browser.quit()
 
+@pytest.fixture()
+def base_url():
+    def add_endpoint(endpoint):
+        return f'https://dog.ceo/api/{endpoint}'
+    return add_endpoint
